@@ -1,0 +1,32 @@
+{
+  "name": "mini-bundler",
+  "version": "1.0.0",
+  "description": "🎯功能目标： 1. 实现mvp版本bundler",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd example/config && tsx build.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l1ax/mini-bundler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l1ax/mini-bundler/issues"
+  },
+  "homepage": "https://github.com/l1ax/mini-bundler#readme",
+  "dependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/parser": "^7.27.7",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/traverse": "^7.28.0",
+    "@babel/types": "^7.27.7",
+    "tsx": "^4.20.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "typescript": "^5.8.3"
+  }
+}

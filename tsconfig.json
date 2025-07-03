@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",  // 关键配置
+    "moduleResolution": "node",
+    "esModuleInterop": true,  // 允许混用 import 和 require
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "types": ["node"]
+  },
+  "include": ["./core/*", "./example/*"],
+  "exclude": ["./node_modules", "dist"]
+}
