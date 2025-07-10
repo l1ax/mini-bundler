@@ -5,6 +5,6 @@ import {buildConfig} from './buildConfig';
 const bundler: Bundler = createBundler(buildConfig);
 
 
-const result = bundler.start();
+const result = bundler.run();
 
 fs.writeFileSync('../dist/bundle.js', result);
