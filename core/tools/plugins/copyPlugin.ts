@@ -3,7 +3,7 @@
  */
 
 import path from 'path';
-import {Bundler, Plugin} from '../../../core';
+import {Bundler, Plugin} from '../../index';
 import fs from 'fs';
 
 export class CopyAssetsPlugin extends Plugin implements Plugin.IPlugin {

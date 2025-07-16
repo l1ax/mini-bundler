@@ -3,7 +3,7 @@
  */
 import { ModuleParser } from '../moduleParser';
 import { DependencyGraphController } from '../depGraphController';
-import { Hook, Plugin, Stats } from '../model';
+import { Hook, Loader, Plugin, Stats } from '../model';
 import fs from "fs";
 import path from 'path';
 
@@ -111,6 +111,8 @@ export namespace Bundler {
         outputs: string;
         /** 插件集合 */
         plugins?: Array<Plugin.IPlugin>;
+        /** loaders集合 */
+        loaders?: Record<string, Loader.ILoader[]>
     }
 
     export type HookType = 'beforeRun' | 'afterRun'
