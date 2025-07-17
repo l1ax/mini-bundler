@@ -81,9 +81,14 @@ export class Bundler {
             })({${modules}})
         `;
 
-        this.stats.setOutput(result);
+        this.stats.setOutput(result, this.options.output.path, this.options.output.fileName);
 
-        const outputPath: string = path.resolve(this.options.context, this.options.outputs);
+        const dirPath: string = path.resolve(this.options.context, this.options.output.path);
+        const outputPath: string = path.resolve(this.options.context, this.options.output.path, this.options.output.fileName);
+        
+        if (!(fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory())) {
+            fs.mkdirSync(dirPath, { recursive: true })
+        }
         fs.writeFileSync(outputPath, result);
 
         return result;
@@ -108,7 +113,7 @@ export namespace Bundler {
         /** 上下文路径 */
         context: string;
         /** 输出路径 */
-        outputs: string;
+        output: IOutput;
         /** 插件集合 */
         plugins?: Array<Plugin.IPlugin>;
         /** loaders集合 */
@@ -116,4 +121,11 @@ export namespace Bundler {
     }
 
     export type HookType = 'beforeRun' | 'afterRun'
+
+    export interface IOutput {
+        /** 输出路径 */
+        path: string;
+        /** 输出文件名 */
+        fileName: string;
+    }
 }
