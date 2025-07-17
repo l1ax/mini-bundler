@@ -1,4 +1,4 @@
-import {Bundler} from '../../core';
+import {Bundler, DevServerPlugin} from '../../core';
 import {cssLoader, tsLoader, HTMLPlugin} from '../../core';
 
 export const buildConfig: Bundler.IOptions = {
@@ -8,7 +8,7 @@ export const buildConfig: Bundler.IOptions = {
         path: '../dist',
         fileName: 'bundle.js'
     },
-    plugins: [new HTMLPlugin()],
+    plugins: [new HTMLPlugin(), new DevServerPlugin()],
     loaders: {
         css: [cssLoader, tsLoader]
     }

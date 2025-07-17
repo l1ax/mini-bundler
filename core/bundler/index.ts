@@ -89,6 +89,7 @@ export class Bundler {
         if (!(fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory())) {
             fs.mkdirSync(dirPath, { recursive: true })
         }
+
         fs.writeFileSync(outputPath, result);
 
         return result;
